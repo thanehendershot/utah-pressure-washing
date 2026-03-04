@@ -1,0 +1,12 @@
+# Backup files
+*.backup
+
+# Mac system files
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
