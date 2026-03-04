@@ -170,6 +170,9 @@ body {
 /* Hero Banner */
 .hero-banner {
     background: linear-gradient(135deg, #046bd2 0%, #0354a6 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
@@ -266,11 +269,34 @@ body {
 
 .service-box {
     background: #ffffff;
-    padding: 2.5rem;
+    padding: 0;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.3s;
     position: relative;
+    overflow: hidden;
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.service-box > *:not(.service-image) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.service-box h3 {
+    padding-top: 1.5rem;
+}
+
+.service-box .service-link {
+    display: block;
+    padding-bottom: 2.5rem;
 }
 
 .service-box:hover {
@@ -297,6 +323,7 @@ body {
 
 .service-icon-wrap {
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .service-number {
@@ -328,6 +355,7 @@ body {
 .service-features {
     list-style: none;
     margin-bottom: 1.5rem;
+    padding-left: 0 !important;
 }
 
 .service-features li {
@@ -350,6 +378,8 @@ body {
     font-weight: 700;
     color: #046bd2;
     margin-bottom: 1rem;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
 }
 
 .service-link {
