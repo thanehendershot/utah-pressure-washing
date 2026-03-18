@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Free Pressure Washing Quote | Utah County</title>
     <meta name="description" content="Get your free pressure washing quote today! Serving Provo, Orem, Lehi & Utah County. Fast response, honest pricing, satisfaction guaranteed. Call now!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,7 +31,8 @@
     </header>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="contact-page-header">
+        <div class="hero-overlay"></div>
         <div class="container">
             <h1>Ready for a Cleaner, Brighter Property?</h1>
             <p>Get your free quote in minutes – no obligation, no pressure</p>
@@ -53,7 +57,7 @@
 
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="(801) 555-1234">
+                            <input type="tel" id="phone" name="phone" required placeholder="(843) 624-3329">
                         </div>
 
                         <div class="form-group">
@@ -139,7 +143,7 @@
                 <div class="contact-info-sidebar">
                     <div class="contact-info-card">
                         <h3>Or Call/Text Us Directly</h3>
-                        <p class="phone-large">(801) XXX-XXXX</p>
+                        <p class="phone-large">(843) 624-3329</p>
                         <p class="contact-note">We typically respond within a few hours</p>
                     </div>
 
@@ -230,7 +234,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Phone: (801) XXX-XXXX</p>
+                    <p>Phone: (843) 624-3329</p>
                     <p>Monday-Saturday: 8 AM - 6 PM</p>
                     <p>Sunday: Closed</p>
                 </div>
@@ -240,6 +244,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="success-icon">✓</div>
+                <h2>Quote Request Submitted!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your interest in Utah Pressure Pros. We've received your quote request and will contact you within 24 hours.</p>
+                <p class="modal-note">Check your email for a confirmation.</p>
+            </div>
+            <button onclick="closeModal()" class="btn btn-primary btn-large">Got It</button>
+        </div>
+    </div>
 
     <script>
         // Simple form validation and submission
@@ -257,10 +276,22 @@
             }
 
             // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
-            alert('Thank you! Your quote request has been submitted. We\'ll contact you within 24 hours.');
+            // For now, we'll show a success modal
+            document.getElementById('successModal').style.display = 'flex';
             this.reset();
         });
+
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('successModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
